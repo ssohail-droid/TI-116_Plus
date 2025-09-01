@@ -1,0 +1,17 @@
+ClrHome
+Get(Str1)
+Disp "RECEIVED:"
+If length(Str1)>0
+Then
+For(I,1,length(Str1),14)
+If I+13>length(Str1)
+Then
+Disp sub(Str1,I,length(Str1)-I+1)
+Else
+Disp sub(Str1,I,14)
+End
+End
+End
+Input Str1
+Disp "SENDING:",Str1
+Send(Str1)
