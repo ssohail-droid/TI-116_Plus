@@ -16,4 +16,13 @@ A special thanks to John from the UTD IEEE Discord server, and to Chromalock and
 - Heat shrink tubing
 - Electrical tape
 - Torx T6 screwdriver (for the outer screws)  
-- Phillips screwdriver (for the backup battery)  
+- Phillips screwdriver (for the backup battery)
+
+  ## Step 1: Open the Calculator
+
+1. Use the **Torx T6 screwdriver** to remove the outer screws.  
+2. Carefully lift the back cover.  
+3. Use the **Phillips screwdriver** to remove the screw holding the backup battery in place.
+<p align="center">
+  <img src="Doc/IMG_7117.jpg" alt="Alt text" width="500">
+</p>
