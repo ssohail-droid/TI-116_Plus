@@ -90,3 +90,40 @@ A special thanks to John from the UTD IEEE Discord server, and to Chromalock and
 <p align="center">
   <img src="Doc/Screenshot 2025-09-01tt034618.png" alt="Alt text" width="500">
 </p>
+
+## Step 5: Test
+
+- Hook everything up and power on the TI-84 Plus.
+- Go to `PRGM` on the calculator.
+
+<p align="center">
+  <img src="Doc/Capture 1.png" alt="Alt text" width="500">
+</p>
+  
+- Select `PROG01` and press `ENTER`.
+
+<p align="center">
+  <img src="Doc/Capture 2.png" alt="Alt text" width="500">
+</p>
+
+- Press `ENTER` again to start the program.
+
+<p align="center">
+  <img src="Doc/Capture 3.png" alt="Alt text" width="500">
+</p>
+
+- You should now have it running.
+- To send text to ChatGPT:
+  - Press `2ND` then `ALPHA` to enter text mode.
+  - Use the green keys to type your message.
+ 
+<p align="center">
+  <img src="Doc/Capture 4.png" alt="Alt text" width="500">
+</p>
+    
+- After typing, press `ENTER` to send.
+- Press `ENTER` again to read ChatGPT's response.
+
+<p align="center">
+  <img src="Doc/Capture 5.png" alt="Alt text" width="500">
+</p>
