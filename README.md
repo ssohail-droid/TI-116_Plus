@@ -57,5 +57,12 @@ A special thanks to John from the UTD IEEE Discord server, and to Chromalock and
 ## Step 4: CODE!!!!!!!!!!!!!!!!!!!!!!!!
 
 - [Download the libraries here](https://github.com/KermMartian/ArTICL)
+  
+<p align="center">
+  <img src="Doc/Screenshot 2025-09-01 032627.png" alt="Alt text" width="500">
+</p>
 
+<p align="center">
+  <img src="Doc/Screenshot 2025-09-01 032839.png" alt="Alt text" width="500">
+</p>
 
