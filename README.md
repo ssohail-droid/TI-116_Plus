@@ -26,3 +26,20 @@ A special thanks to John from the UTD IEEE Discord server, and to Chromalock and
 <p align="center">
   <img src="Doc/IMG_7117.jpg" alt="Alt text" width="500">
 </p>
+
+## Step 2: Wiring ✅
+
+## Step 2: Wiring
+- TI-84 Plus
+- ESP32
+- Bidirectional 5V-to-3.3V level shifter
+- Wires
+- Soldering iron
+- Heat shrink tubing
+- Electrical tape
+<p align="center">
+  <img src="Doc/IMG_7143.jpeg" alt="Alt text" width="500">
+</p>
+  
+
+
