@@ -127,3 +127,12 @@ A special thanks to John from the UTD IEEE Discord server, and to Chromalock and
 <p align="center">
   <img src="Doc/Capture 5.png" alt="Alt text" width="500">
 </p>
+
+## Congratulations! You now have ChatGPT working on a TI-84 Plus (also referred to as a TI-116 Plus).
+
+
+<p align="center">
+  <a href="https://example.com">
+    <img src="https://tenor.com/view/party-parrot-party-parrot-gif-15648455" alt="Demo GIF">
+  </a>
+</p>
