@@ -66,5 +66,11 @@ A special thanks to John from the UTD IEEE Discord server, and to Chromalock and
   <img src="Doc/Screenshot 2025-09-01 032839.png" alt="Alt text" width="500">
 </p>
 
+### Next go to [Code_For_ESP32](https://github.com/ssohail-droid/TI-116_Plus/blob/main/Code_For_ESP32/ESP32)
+- Copy and paste the code into your project.
+- Replace the placeholders with your own credentials:
+  - API key
+  - Wi-Fi SSID
+  - Wi-Fi password
 
 
