@@ -48,6 +48,13 @@ A special thanks to John from the UTD IEEE Discord server, and to Chromalock and
   <img src="Doc/IMGexple_7134.jpg" alt="Alt text" width="500">
 </p>
 
+## Step 3: Reassemble the Calculator
+
+<p align="center">
+  <img src="Doc/IMG_7117.jpg" alt="Alt text" width="500">
+</p>
+
+## Step 4: CODE!!!!!!!!!!!!!!!!!!!!!!!!
   
 
 
