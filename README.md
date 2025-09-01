@@ -133,6 +133,6 @@ A special thanks to John from the UTD IEEE Discord server, and to Chromalock and
 
 <p align="center">
   <a href="https://example.com">
-    <img src="https://tenor.com/view/party-parrot-party-parrot-gif-15648455" alt="Demo GIF">
+    <img src="https://media.tenor.com/3_mXIoBPNhoAAAAi/party-parrot.gif" alt="Demo GIF">
   </a>
 </p>
