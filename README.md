@@ -40,6 +40,14 @@ A special thanks to John from the UTD IEEE Discord server, and to Chromalock and
 <p align="center">
   <img src="Doc/IMG_7143.jpeg" alt="Alt text" width="500">
 </p>
+
+## Bonus: Access Port
+- A port for experimentation, power output, and access to IO pins.
+
+<p align="center">
+  <img src="Doc/IMGexple_7134.jpg" alt="Alt text" width="500">
+</p>
+
   
 
 
