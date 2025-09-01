@@ -11,6 +11,7 @@ A special thanks to John from the UTD IEEE Discord server, and to Chromalock and
 - ESP32
 - Bidirectional 5V-to-3.3V level shifter
 - Wires
+- Female and male 5-pin headers
 - Soldering iron
 - Heat shrink tubing
 - Electrical tape
