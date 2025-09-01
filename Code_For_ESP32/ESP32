@@ -1,0 +1,161 @@
+#include "CBL2.h"
+#include "TIVar.h"
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <ArduinoJson.h>
+
+
+
+
+CBL2 cbl;
+const int lineRed = 21;
+const int lineWhite = 22;
+
+
+
+
+#define MAXDATALEN 255
+uint8_t header[16];
+uint8_t data[MAXDATALEN];
+
+
+
+
+// Wi-Fi credentials
+const char* ssid = "XXXXXX";
+const char* password = "XXXXXXXXXX";
+
+
+
+
+// OpenAI
+const char* openaiKey = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX";
+const char* openaiURL = "https://api.openai.com/v1/chat/completions";
+
+
+
+
+String lastResponse = "Hello from ESP32/OpenAI!";
+
+
+
+
+int onReceived(uint8_t type, enum Endpoint model, int datalen);
+int onRequest(uint8_t type, enum Endpoint model, int* headerlen, int* datalen, data_callback* data_callback);
+
+
+
+
+void setup() {
+  Serial.begin(115200);
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) { delay(500); Serial.print("."); }
+  Serial.println("\nWiFi connected");
+
+
+
+
+  cbl.setLines(lineRed, lineWhite);
+  cbl.resetLines();
+  cbl.setupCallbacks(header, data, MAXDATALEN, onReceived, onRequest);
+}
+
+
+
+
+void loop() {
+  cbl.eventLoopTick();
+}
+
+
+
+
+// Called when TI sends a message
+int onReceived(uint8_t type, enum Endpoint model, int datalen) {
+  if (type != VarTypes82::VarString) return -1;
+
+
+
+
+  String userMsg = TIVar::strVarToString8x(data, model);
+  Serial.println("TI asked: " + userMsg);
+
+
+
+
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    http.begin(openaiURL);
+    http.addHeader("Authorization", String("Bearer ") + openaiKey);
+    http.addHeader("Content-Type", "application/json");
+
+
+
+
+    // OpenAI ChatGPT payload
+    String payload = "{\"model\": \"gpt-3.5-turbo\","
+                 "\"messages\": ["
+                 "{\"role\": \"system\", \"content\": \"You are a concise summarizer. Respond with a short summary.\"},"
+                 "{\"role\": \"user\", \"content\": \"" + userMsg + "\"}"
+                 "],"
+                 "\"temperature\": 0.5,"
+                 "\"max_tokens\": 30}";
+
+
+
+
+    int code = http.POST(payload);
+
+
+
+
+    if (code == 200) {
+      String response = http.getString();
+      StaticJsonDocument<4096> doc;
+      deserializeJson(doc, response);
+      lastResponse = doc["choices"][0]["message"]["content"].as<String>();
+      Serial.println("OpenAI says: " + lastResponse);
+    } else {
+      lastResponse = "Error " + String(code);
+      Serial.println("HTTP error: " + String(code));
+    }
+    http.end();
+  }
+
+
+
+
+  return 0;
+}
+
+
+
+
+// Return the last response to TI
+int onRequest(uint8_t type, enum Endpoint model, int* headerlen, int* datalen, data_callback* data_callback) {
+  if (type != VarTypes82::VarString) return -1;
+
+
+
+
+  String reply = lastResponse;
+  int rval = TIVar::stringToStrVar8x(reply, data, model);
+  if (rval < 0) return -1;
+
+
+
+
+  *datalen = rval;
+  memset(header, 0, sizeof(header));
+  TIVar::intToSizeWord(rval, header);
+  header[2] = VarTypes82::VarString;
+  header[3] = 0xAA; // Str1
+  header[4] = 0x00;
+  *headerlen = 13;
+
+
+
+
+  Serial.println("Sending to TI: " + reply);
+  return 0;
+}
