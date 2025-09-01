@@ -5,7 +5,7 @@ A special thanks to John from the UTD IEEE Discord server, and to Chromalock and
 
 **Uncle Ben-“With great power comes great responsibility”**
 
-##Required Components & Tools:
+## Required Components & Tools:
 
 - TI-84 Plus
 - ESP32
